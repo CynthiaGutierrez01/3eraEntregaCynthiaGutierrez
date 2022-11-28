@@ -1,0 +1,117 @@
+/* NavBar */
+
+.navbar{
+    display: flex;
+}
+
+.navbarLogo{
+    margin: 10%;
+    cursor: pointer;
+    height: 10em;
+}
+
+.imagenCesta{
+    height: 5em;
+}
+
+
+/* Productos */
+
+.gustoAlfajor {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.card {
+    flex-wrap: wrap;
+    align-self: center;
+    box-shadow: 10% grey;
+    margin: 1%;
+    text-align: center;
+    width: 40%;
+}
+
+.card > img {
+    /* width: 70%;
+    height: 60%; */
+    align-self: center;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    padding: 1%;
+    color: white;
+    background-color: rgb(159, 206, 159);
+    text-align: center;
+    cursor: pointer;
+    width: 40%;
+    font-size: 18px;
+    align-self: center;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+/* Carrito de Compras  */
+.carrito-container{
+    width: 50%;
+    margin: 0 40%;
+    max-height: 88vh;
+    color: rgb(248, 238, 238);
+    background-color: rgb(159, 206, 159);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+}
+
+.carrito-container::-webkit-scrollbar{
+    display: none;
+}
+.carrito-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(122, 190, 122);
+    color: #fff;
+    width: 100%;
+}
+
+.carrito-header-title {
+    justify-self: start;
+}
+
+.carrito-header-button {
+    cursor: pointer;
+}
+
+.carrito-container > .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+}
+
+.carrito-container > div > img {
+    height: 120px;
+    width: 120px;
+}
+
+.total-Content {
+    padding: 20%;
+    text-align: center;
+    padding-top: 20px;
+}
