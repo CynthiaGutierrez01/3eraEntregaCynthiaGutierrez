@@ -1,7 +1,11 @@
+// Variables
+
 const gustoAlfajor = document.getElementById("gustoAlfajor");
 const verCarrito = document.getElementById("verCarrito");
 const carritoContainer = document.getElementById("carrito-container");
 
+
+// Productos
 const alfajores = [
     {id:1, nombre:"Alfajor de Chocolate Negro, relleno de Dulce de Leche", precio:300, img: "./assets/img/alfajorChocoNDdl.png"},
     {id:2, nombre:"Alfajor de Chocolate Negro, relleno con Nutella", precio:350, img: "./assets/img/alfajorChocoNNut.png"},
@@ -11,6 +15,8 @@ const alfajores = [
 ];
 
 let carrito = []
+
+// Cards de Productos
 
 alfajores.forEach((alfajor)=> {
     let content = document.createElement("div");
@@ -22,6 +28,8 @@ alfajores.forEach((alfajor)=> {
     `;
 
     gustoAlfajor.append(content);
+
+// Boton de Comprar
 
     let comprar = document.createElement("button")
     comprar.innerText = "comprar";
@@ -39,6 +47,8 @@ alfajores.forEach((alfajor)=> {
     console.log(carrito)
     })
 });
+
+// Carrito
 
 verCarrito.addEventListener("click", () =>{
     carritoContainer.innerHTML = ""; 
