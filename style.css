@@ -115,3 +115,26 @@
     text-align: center;
     padding-top: 20px;
 }
+
+.eliminar-producto{
+    cursor: pointer;
+}
+
+.cantidadCarrito {
+    background-color: rgb(122, 190, 122);
+    color: white;
+    padding: 1%;
+    border-radius: 40%;
+    font-size: 14px;
+    right: 1%;
+    position: absolute;
+    display: none;
+}
+
+.suma{
+    cursor: pointer;
+}
+
+.resta{
+    cursor: pointer;
+}
