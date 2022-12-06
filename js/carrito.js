@@ -67,22 +67,15 @@
 
         console.log(carrito.length);
 
-
-        // Eliminar alfajores
-        // let eliminar = document.createElement("span");
-
-        // eliminar.innerText = "❌";
-        // eliminar.className = "eliminar-producto";
-        // carritoContent.append(eliminar);
-
-        // eliminar.addEventListener ("click", eliminarProducto);
     });
 
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
     const totalBuying = document.createElement ("div");
     totalBuying.class = "total-Content";
-    totalBuying.innerHTML = `total a pagar: $ ${total} `;
+    totalBuying.innerHTML = `total a pagar: $ ${total} 
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+    `;
     carritoContainer.append(totalBuying);
 }
 
@@ -113,3 +106,18 @@ const carritoCounter = () =>{
 };
 
 carritoCounter();
+
+// vaciar carrito
+
+const botonVaciar = totalBuying.querySelector ("#vaciar-carrito");
+
+botonVaciar.addEventListener("click", vaciarCarrito);
+
+
+function vaciarCarrito () {
+    carrito.length = 0;
+    localStorage.setItem(carritoLength, JSON.stringify(carrito));
+    pintarCarrito();
+}
+
+
