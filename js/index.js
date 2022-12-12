@@ -8,23 +8,27 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Cards de Productos
+// Cards de Productos // Fetch
 
-alfajores.forEach((alfajor)=> {
-    let content = document.createElement("div");
-    content.className = "card";
-    content.innerHTML = `
-    <img src = "${alfajor.img}">
-    <h3>${alfajor.nombre}</h3>
-    <p class="price"> $ ${alfajor.precio}</p>
 
-    `;
-
-    gustoAlfajor.append(content);
-
+fetch("./data.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach((alfajor) => {
+        let content = document.createElement("div");
+        content.className = "card";
+        content.innerHTML = `
+        <img src = "${alfajor.img}">
+        <h3>${alfajor.nombre}</h3>
+        <p class="price"> $ ${alfajor.precio}</p>
+        `
+        gustoAlfajor.append(content);
+    
+    
 // Boton de Comprar
 
     let comprar = document.createElement("button")
+
     comprar.innerText = "comprar";
     comprar.className = "comprar";
 
@@ -54,8 +58,14 @@ alfajores.forEach((alfajor)=> {
     console.log(carrito);
     carritoCounter();
     guardar();
-    })
+    swal ( " Producto Agregado! " , "", "success" , {   
+        botón : " ¡Aww yiss! " , 
+    });
+    
+    });
 });
+});
+
 
 
 
